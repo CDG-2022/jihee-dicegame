@@ -16,7 +16,7 @@ public class FraudDice {
         int diceNumber;
 
         diceNumber = random.nextInt(6) + 1;
-        while(diceNumber >= 5) // 5 이상의 눈금이 나오면 다시 던집니다.
+        while(diceNumber >= 5) // 5 이상의 눈금이 나오면 다시 던지기
             diceNumber = random.nextInt(6) + 1;
         return diceNumber;
     }
@@ -25,7 +25,7 @@ public class FraudDice {
         int diceNumber;
 
         diceNumber = random.nextInt(6) + 1;
-        while(diceNumber <= 2) // 2 이하의 눈금이 나오면 다시 던집니다.
+        while(diceNumber <= 2) // 2 이하의 눈금이 나오면 다시 던지기
             diceNumber = random.nextInt(6) + 1;
         return diceNumber;
     }
