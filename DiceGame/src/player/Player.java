@@ -1,4 +1,4 @@
-package com.example.dicegame;
+package player;
 
 public class Player {
     String name;
