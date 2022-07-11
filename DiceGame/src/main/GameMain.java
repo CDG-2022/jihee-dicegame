@@ -8,8 +8,8 @@ import recorder.Recorder;
 import java.util.Scanner;
 
 public class GameMain {
-    static final int five = 5;
-    public static void main(String args[]){
+    public static final int five = 5;
+    public static void main(){
         String playerName1, playerName2;
 
         Scanner scanner = new Scanner(System.in);
