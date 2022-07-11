@@ -5,6 +5,9 @@ import java.util.Random;
 public class FraudDice {
     Random random = new Random();
 
+    public FraudDice(){
+        System.out.println("사기 주사위 생성 완료!");
+    }
     int roll(){
         int diceNumber;
 
