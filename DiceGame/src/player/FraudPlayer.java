@@ -6,6 +6,7 @@ public class FraudPlayer {
 
     public FraudPlayer(String name){
         this.name = name;
+        System.out.println("사기꾼 등장! 내 이름은 " + name);
     }
 
     int levelOfDice() {
