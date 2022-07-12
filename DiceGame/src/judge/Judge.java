@@ -19,7 +19,7 @@ public class Judge {
             round++;
         }
         // if (player.total == fraudPlayer.total)
-        //System.out.println("무승부입니다.");
+        // System.out.println("무승부입니다.");
 
         // else winner = (player.total < fraudPlayer.total) ? 1 : 2;
         // if-else 를 쓰지 않고도 바로 승자를 출력하는 방법이 없을까?
