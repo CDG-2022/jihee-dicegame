@@ -9,10 +9,7 @@ public class FraudDice {
         System.out.println("사기 주사위 생성 완료!");
     }
     int roll(){
-        int diceNumber;
-
-        diceNumber = random.nextInt(6) + 1; // 0 ~ 5 에 1 을 더해 1 ~ 6 을 만든다.
-        return diceNumber;
+        return random.nextInt(6) + 1; // 0 ~ 5 에 1 을 더해 1 ~ 6 을 만든다.
     }
 
     int rollEasy(){
