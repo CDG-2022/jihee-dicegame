@@ -1,19 +1,21 @@
 package player;
 
-import dice.Dice;
 import dice.FraudDice;
+import lombok.Data;
+import lombok.Getter;
 
+@Getter
 public class FraudPlayer {
-    String name;
-    int total;
+    private String name;
+    private  int total;
 
-    FraudDice fraudDice;
+    private FraudDice fraudDice;
 
-    public FraudPlayer(String name){
+    public FraudPlayer(String name, FraudDice fraudDice){
         this.name = name;
         System.out.println("사기꾼 등장! 내 이름은 " + name);
         System.out.println("나는 사기 주사위를 가지고 있지!");
-        this.fraudDice = null;
+        this.fraudDice = fraudDice;
     }
 
     int levelOfDice() {

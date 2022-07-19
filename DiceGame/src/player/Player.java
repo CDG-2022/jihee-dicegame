@@ -10,11 +10,10 @@ public class Player {
     int total;
     Dice dice;
 
-    public Player(String name){
+    public Player(String name, Dice dice){
         this.name = name;
         System.out.println("플레이어 등장! 내 이름은 " + name);
         System.out.println("나는 일반 주사위를 가지고 있지!");
         this.dice = null;
-        //this.total += dice.roll();
     }
 }
