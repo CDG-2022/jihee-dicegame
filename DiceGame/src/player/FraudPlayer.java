@@ -7,11 +7,13 @@ public class FraudPlayer {
     String name;
     int total;
 
+    FraudDice fraudDice;
+
     public FraudPlayer(String name){
         this.name = name;
         System.out.println("사기꾼 등장! 내 이름은 " + name);
         System.out.println("나는 사기 주사위를 가지고 있지!");
-        FraudDice fraudDicedice = new FraudDice();
+        this.fraudDice = null;
     }
 
     int levelOfDice() {
