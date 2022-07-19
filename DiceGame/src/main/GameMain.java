@@ -28,7 +28,7 @@ public class GameMain {
 
         //player.setDice(dice1);
         //System.out.println(player.getDice());
-        
+
         FraudDice fraudDice = new FraudDice();
 
         System.out.print("두 번째 플레이어의 이름은 : ");
