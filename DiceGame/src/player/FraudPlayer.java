@@ -3,11 +3,14 @@ package player;
 import dice.FraudDice;
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
+
 public class FraudPlayer {
     private String name;
-    private  int total;
+    private int total;
 
     private FraudDice fraudDice;
 

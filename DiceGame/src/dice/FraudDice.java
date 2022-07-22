@@ -1,6 +1,12 @@
 package dice;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Random;
+
+@Getter
+@Setter
 
 public class FraudDice extends Dice {
     Random random = new Random();

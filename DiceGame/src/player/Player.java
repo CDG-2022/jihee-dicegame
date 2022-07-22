@@ -4,10 +4,13 @@ import dice.Dice;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
+
 public class Player {
 
-    public String name;
-    int total;
+    private String name;
+    private int total = 0;
     Dice dice;
 
     public Player(String name, Dice dice){
