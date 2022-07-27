@@ -1,7 +1,12 @@
 package recorder;
 
+import lombok.Getter;
+import lombok.Setter;
 import player.FraudPlayer;
 import player.Player;
+
+@Getter
+@Setter
 
 public class Recorder {
     public Recorder(){
