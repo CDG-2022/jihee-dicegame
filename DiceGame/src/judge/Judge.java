@@ -6,6 +6,7 @@ import main.GameMain;
 import player.FraudPlayer;
 import player.Player;
 import dice.Dice;
+import recorder.Recorder;
 
 @Getter
 @Setter
@@ -17,14 +18,31 @@ public class Judge {
         System.out.println("저는 심판입니다. 게임을 시작하겠습니다.");
     }
 
-    public void startGame(){
+    public void startGame(Player player1, Player player2, Recorder recorder){
         this.round = 0;
-        int winner = 0;
-        while (round < GameMain.five) {
-            System.out.println((round+1) + "라운드");
-            //player 와 fraudPlayer 가 각자 소유의 주사위를 굴린다.
-            //recorder.record 로 진행 상황을 기록한다.
-            round++;
+        while (this.getRound() < GameMain.PLAY_COUNT) {
+            System.out.println((this.getRound()+1) + "라운드");
+
+            recorder.recordToThrowDice(player1);
+            player1.setTotal(player1.getTotal() + player1.getDice().roll());
+            recorder.recordToShowScore(player1);
+
+            recorder.recordToThrowDice(player2);
+            player2.setTotal(player2.getTotal() + player2.getDice().roll());
+            recorder.recordToShowScore(player2);
+
+            this.setRound(this.getRound() + 1);
+            System.out.println();
+        }
+
+        if (player1.getTotal() == player2.getTotal()) {
+            recorder.recordDraw();
+        }
+        else if (player1.getTotal() > player2.getTotal()){
+            recorder.recordWinner(player1);
+        }
+        else {
+            recorder.recordWinner(player2);
         }
     }
 }

@@ -13,7 +13,19 @@ public class Recorder {
         System.out.println("기록은 제가 할게요!");
     }
 
-    void record(){
-        // System.out.println(player1이름:현재누적점수 player2이름[주사위모드]:현재누적점수);
+    public void recordToThrowDice(Player player) {
+        System.out.println("현재 누적 점수가 " + player.getTotal() + "점인 " + player.getName() + "이 주사위를 굴렸다!");
+    }
+
+    public void recordToShowScore(Player player) {
+        System.out.println(player.getName()+ "의 점수가 " + player.getTotal() + "점이 되었다!");
+    }
+
+    public void recordWinner(Player player) {
+        System.out.println(player.getName() + "의 승리입니다!");
+    }
+
+    public void recordDraw() {
+        System.out.println("무승부입니다.");
     }
 }
