@@ -9,17 +9,26 @@ import java.util.Random;
 @Setter
 
 public class FraudDice extends Dice {
-    Random random = new Random();
 
-    public FraudDice(){
+    public enum Level {
+        EASY, HARD, DEFAULT
+    }
+
+    private Level level = Level.DEFAULT;
+
+    public FraudDice() {
         System.out.println("사기 주사위 생성 완료!");
     }
 
-    public int rollEasy(){
-        return random.nextInt(4) + 1; // 5, 6 을 제외한 1, 2, 3, 4 만 나오도록 주사위 난수를 조정한다.
-    }
+    public int roll() {
 
-    public int rollHard(){
-        return random.nextInt(4) + 1 + 2; // 1, 2 를 제외한 3, 4, 5, 6 만 나오도록 주사위 난수를 조정한다.
+        switch (level) {
+            case EASY:
+                return random.nextInt(4) + 1;
+            case HARD:
+                return random.nextInt(4) + 1 + 2;
+            default:
+                return random.nextInt(6) + 1;
+        }
     }
 }

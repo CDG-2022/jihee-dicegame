@@ -14,14 +14,17 @@ import recorder.Recorder;
 public class Judge {
 
     private int round = 0;
-    public Judge(){
+
+    public Judge() {
         System.out.println("저는 심판입니다. 게임을 시작하겠습니다.");
     }
 
-    public void startGame(Player player1, Player player2, Recorder recorder){
+    public void startGame(Player player1, FraudPlayer player2, Recorder recorder) {
         this.round = 0;
         while (this.getRound() < GameMain.PLAY_COUNT) {
-            System.out.println((this.getRound()+1) + "라운드");
+            System.out.println((this.getRound() + 1) + "라운드");
+
+            // player2.levelOfDice(player1, player2);
 
             recorder.recordToThrowDice(player1);
             player1.setTotal(player1.getTotal() + player1.getDice().roll());
@@ -37,11 +40,9 @@ public class Judge {
 
         if (player1.getTotal() == player2.getTotal()) {
             recorder.recordDraw();
-        }
-        else if (player1.getTotal() > player2.getTotal()){
+        } else if (player1.getTotal() > player2.getTotal()) {
             recorder.recordWinner(player1);
-        }
-        else {
+        } else {
             recorder.recordWinner(player2);
         }
     }

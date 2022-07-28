@@ -9,7 +9,7 @@ import player.Player;
 @Setter
 
 public class Recorder {
-    public Recorder(){
+    public Recorder() {
         System.out.println("기록은 제가 할게요!");
     }
 
@@ -18,7 +18,7 @@ public class Recorder {
     }
 
     public void recordToShowScore(Player player) {
-        System.out.println(player.getName()+ "의 점수가 " + player.getTotal() + "점이 되었다!");
+        System.out.println(player.getName() + "의 점수가 " + player.getTotal() + "점이 되었다!");
     }
 
     public void recordWinner(Player player) {
