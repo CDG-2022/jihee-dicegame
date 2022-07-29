@@ -17,6 +17,10 @@ public class Recorder {
         System.out.println("현재 누적 점수가 " + player.getTotal() + "점인 " + player.getName() + "이 주사위를 굴렸다!");
     }
 
+    public void recordToDiceNumber(int diceNumber) {
+        System.out.println("나온 눈금 수는 " + diceNumber);
+    }
+
     public void recordToShowScore(Player player) {
         System.out.println(player.getName() + "의 점수가 " + player.getTotal() + "점이 되었다!");
     }

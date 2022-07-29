@@ -5,7 +5,6 @@ import lombok.Setter;
 import main.GameMain;
 import player.FraudPlayer;
 import player.Player;
-import dice.Dice;
 import recorder.Recorder;
 
 @Getter
@@ -21,17 +20,24 @@ public class Judge {
 
     public void startGame(Player player1, FraudPlayer player2, Recorder recorder) {
         this.round = 0;
+        int diceNumber;
         while (this.getRound() < GameMain.PLAY_COUNT) {
             System.out.println((this.getRound() + 1) + "라운드");
 
-            // player2.levelOfDice(player1, player2);
+            player2.setLevel(player1.getTotal(), player2);
 
             recorder.recordToThrowDice(player1);
-            player1.setTotal(player1.getTotal() + player1.getDice().roll());
+            diceNumber = player1.getDice().roll();
+            recorder.recordToDiceNumber(diceNumber);
+            player1.setTotal(player1.getTotal() + diceNumber);
             recorder.recordToShowScore(player1);
 
+            System.out.println();
+
             recorder.recordToThrowDice(player2);
-            player2.setTotal(player2.getTotal() + player2.getDice().roll());
+            diceNumber = player2.getDice().roll();
+            recorder.recordToDiceNumber(diceNumber);
+            player2.setTotal(player2.getTotal() + diceNumber);
             recorder.recordToShowScore(player2);
 
             this.setRound(this.getRound() + 1);

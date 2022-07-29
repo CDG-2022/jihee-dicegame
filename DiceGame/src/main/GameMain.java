@@ -24,17 +24,19 @@ public class GameMain {
         FraudDice fraudDice = new FraudDice();
         Judge judge = new Judge();
         Recorder recorder = new Recorder();
+        System.out.println();
 
         System.out.print("첫 번째 플레이어의 이름은 : ");
         Player player1 = new Player(scanner.nextLine(), dice1);
+        System.out.println();
 
         System.out.print("두 번째 플레이어의 이름은 : ");
         // Player player2 = new Player(scanner.nextLine(), dice2);
         FraudPlayer fraudPlayer = new FraudPlayer(scanner.nextLine(), fraudDice);
 
-        System.out.println();
+        System.out.println(fraudPlayer.getDice());
 
-        // System.out.println("사기플레이어의 이름이 뭐라고? " + player2.getName());
+        System.out.println();
 
         judge.startGame(player1, fraudPlayer, recorder);
     }
