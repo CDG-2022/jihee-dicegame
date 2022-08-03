@@ -24,7 +24,7 @@ public class Judge {
         while (this.getRound() < GameMain.PLAY_COUNT) {
             System.out.println((this.getRound() + 1) + "라운드");
 
-            player2.setLevel(player1.getTotal(), player2);
+            player2.setLevel(player1.getTotal());
 
             recorder.recordToThrowDice(player1);
             diceNumber = player1.getDice().roll();

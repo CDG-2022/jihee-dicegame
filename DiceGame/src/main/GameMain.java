@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 @Getter
 @Setter
+
 public class GameMain {
     static Scanner scanner = new Scanner(System.in);
 
@@ -33,8 +34,6 @@ public class GameMain {
         System.out.print("두 번째 플레이어의 이름은 : ");
         // Player player2 = new Player(scanner.nextLine(), dice2);
         FraudPlayer fraudPlayer = new FraudPlayer(scanner.nextLine(), fraudDice);
-
-        System.out.println(fraudPlayer.getDice());
 
         System.out.println();
 
