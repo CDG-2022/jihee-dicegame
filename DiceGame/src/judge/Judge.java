@@ -12,7 +12,7 @@ import recorder.Recorder;
 
 public class Judge {
 
-    private int round = 0;
+    private int round;
 
     public Judge() {
         System.out.println("저는 심판입니다. 게임을 시작하겠습니다.");
@@ -20,30 +20,18 @@ public class Judge {
 
     public void startGame(Player player1, FraudPlayer player2, Recorder recorder) {
         this.round = 0;
-        int diceNumber;
         while (this.getRound() < GameMain.PLAY_COUNT) {
             System.out.println((this.getRound() + 1) + "라운드");
 
             player2.setLevel(player1.getTotal());
 
-            recorder.recordToThrowDice(player1);
-            diceNumber = player1.getDice().roll();
-            recorder.recordToDiceNumber(diceNumber);
-            player1.setTotal(player1.getTotal() + diceNumber);
-            recorder.recordToShowScore(player1);
-
-            System.out.println();
-
-            recorder.recordToThrowDice(player2);
-            diceNumber = player2.getDice().roll();
-            recorder.recordToDiceNumber(diceNumber);
-            player2.setTotal(player2.getTotal() + diceNumber);
-            recorder.recordToShowScore(player2);
-
-            this.setRound(this.getRound() + 1);
-            System.out.println();
+            play(player1, player2, recorder);
         }
 
+        judge(player1, player2, recorder);
+    }
+
+    private void judge(Player player1, Player player2, Recorder recorder) {
         if (player1.getTotal() == player2.getTotal()) {
             recorder.recordDraw();
         } else if (player1.getTotal() > player2.getTotal()) {
@@ -51,5 +39,25 @@ public class Judge {
         } else {
             recorder.recordWinner(player2);
         }
+    }
+
+    private void play(Player player, Player player2, Recorder recorder) {
+        recorder.recordToThrowDice(player);
+        int diceNumber = player.getDice().roll();
+        recorder.recordToDiceNumber(diceNumber);
+        player.setTotal(player.getTotal() + diceNumber);
+        recorder.recordToShowScore(player);
+
+        System.out.println();
+
+        recorder.recordToThrowDice(player2);
+        diceNumber = player2.getDice().roll();
+        recorder.recordToDiceNumber(diceNumber);
+        player2.setTotal(player2.getTotal() + diceNumber);
+        recorder.recordToShowScore(player2);
+
+        System.out.println();
+
+        this.setRound(this.getRound() + 1);
     }
 }
