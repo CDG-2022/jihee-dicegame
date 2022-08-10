@@ -10,10 +10,6 @@ import java.util.Random;
 
 public class FraudDice extends Dice {
 
-    public enum Level {
-        EASY, HARD, DEFAULT
-    }
-
     private Level level = Level.DEFAULT;
 
     public FraudDice() {
@@ -30,5 +26,9 @@ public class FraudDice extends Dice {
             default:
                 return random.nextInt(6) + 1;
         }
+    }
+
+    public enum Level {
+        EASY, HARD, DEFAULT
     }
 }
