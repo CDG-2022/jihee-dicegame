@@ -8,8 +8,8 @@ import lombok.Setter;
 @Setter
 
 public class Player {
-    private String name;
-    private int total = 0;
+    protected String name;
+    protected int total = 0;
     protected Dice dice;
 
     public Player() {
