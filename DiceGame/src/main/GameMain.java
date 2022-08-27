@@ -1,6 +1,6 @@
 package main;
 
-import dice.Dice;
+import dice.RegularDice;
 import dice.FraudDice;
 import judge.Judge;
 import lombok.*;
@@ -21,7 +21,7 @@ public class GameMain {
 
     public static void main(String[] args) {
         System.out.print("첫 번째 플레이어의 이름은 : ");
-        Player player1 = new Player(scanner.nextLine(), new Dice());
+        Player player1 = new Player(scanner.nextLine(), new RegularDice());
         System.out.println();
 
         System.out.print("두 번째 플레이어의 이름은 : ");

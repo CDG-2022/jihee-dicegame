@@ -3,12 +3,10 @@ package dice;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Random;
-
 @Getter
 @Setter
 
-public class FraudDice extends Dice {
+public class FraudDice implements Dice {
 
     private Level level = Level.DEFAULT;
 

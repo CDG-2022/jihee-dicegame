@@ -8,14 +8,14 @@ import lombok.Setter;
 @Setter
 
 public class FraudPlayer extends Player {
+
     private FraudDice fraudDice;
 
     public FraudPlayer(String name, FraudDice fraudDice) {
         this.name = name;
         System.out.println("사기꾼 등장! 내 이름은 " + name);
         System.out.println("나는 사기 주사위를 가지고 있지!");
-        super.dice = fraudDice;
-        this.fraudDice = (FraudDice) dice;
+        this.fraudDice = fraudDice;
     }
 
     public int setLevel(int playerTotal) {
