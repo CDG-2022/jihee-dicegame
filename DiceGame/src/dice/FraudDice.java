@@ -18,11 +18,11 @@ public class FraudDice implements Dice {
 
         switch (level) {
             case EASY:
-                return random.nextInt(4) + 1;
+                return random.nextInt(4) + 1;   // 1-4
             case HARD:
-                return random.nextInt(4) + 1 + 2;
+                return random.nextInt(4) + 1 + 2;   // 3-6
             default:
-                return random.nextInt(6) + 1;
+                return random.nextInt(6) + 1;   // 1-6
         }
     }
 
