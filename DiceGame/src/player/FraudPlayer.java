@@ -1,5 +1,6 @@
 package player;
 
+import dice.Dice;
 import dice.FraudDice;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,14 +9,15 @@ import lombok.Setter;
 @Setter
 
 public class FraudPlayer extends Player {
+    private FraudDice dice;
 
-    private FraudDice fraudDice;
+    public FraudPlayer(String name, Dice dice) {
+        super(name);
+        this.dice = (FraudDice) dice;
+    }
 
-    public FraudPlayer(String name, FraudDice fraudDice) {
-        this.name = name;
-        System.out.println("사기꾼 등장! 내 이름은 " + name);
-        System.out.println("나는 사기 주사위를 가지고 있지!");
-        this.fraudDice = fraudDice;
+    public int roll() {
+        return this.dice.roll();
     }
 
     public int setLevel(int playerTotal) {
@@ -23,12 +25,12 @@ public class FraudPlayer extends Player {
 
         if (playerTotal > getTotal()) {
             System.out.println("사기 플레이어가 얍삽해집니다.");
-            fraudDice.setLevel(FraudDice.Level.HARD);
+            this.dice.setLevel(FraudDice.Level.HARD);
         } else if (getTotal() - playerTotal > 6) {
             System.out.println("사기 플레이어가 거만해집니다.");
-            fraudDice.setLevel(FraudDice.Level.EASY);
+            this.dice.setLevel(FraudDice.Level.EASY);
         } else {
-            fraudDice.setLevel(FraudDice.Level.DEFAULT);
+            this.dice.setLevel(FraudDice.Level.DEFAULT);
         }
         return 0;
     }

@@ -8,7 +8,7 @@ import lombok.Setter;
 
 public class FraudDice implements Dice {
 
-    private Level level = Level.DEFAULT;
+    public Level level = Level.DEFAULT;
 
     public FraudDice() {
         System.out.println("사기 주사위 생성 완료!");

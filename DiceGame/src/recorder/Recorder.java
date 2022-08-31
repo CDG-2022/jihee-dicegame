@@ -2,8 +2,8 @@ package recorder;
 
 import lombok.Getter;
 import lombok.Setter;
-import player.FraudPlayer;
 import player.Player;
+import player.RegularPlayer;
 
 @Getter
 @Setter
